@@ -1,0 +1,14 @@
+{% block content %}
+<h1>ALL UPCOMING EVENTS</h1>
+
+{% for event in event_list %}
+<!-- <strong>{{ event }}</strong> -->
+<ul> 
+<li>Date: {{ event.date }}</li>
+<li>Location: {{ event.location }}</li>
+<li>Venue: {{ event.venue }}</li>
+</ul>
+<br/>
+{% endfor %}
+
+{% endblock %}

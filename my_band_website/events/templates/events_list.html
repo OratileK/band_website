@@ -1,0 +1,44 @@
+{% block content %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f1f1f1;
+        color: #333;
+        background-image: url(https://i.pinimg.com/originals/af/5b/9e/af5b9e0e12bb820b0349d08065d14925.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+    }
+    body, h1 {
+        margin: 0;
+        padding: 0;
+    }
+    h1 {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+</style>
+<h1>ALL UPCOMING EVENTS</h1>
+{% for event in object_list %}
+<div class="card">
+    <div class="card-header">
+        {{ event }}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">MADE IN THE AM: TOUR</h5>
+      <p>
+        <ul> 
+            <li>Date: {{ event.date }}</li>
+            <li>Location: {{ event.location }}</li>
+            <li>Venue: {{ event.venue }}</li>
+        </ul>
+        <button type="button" class="btn btn-primary">Purchase Ticket</button>
+      </p>
+    </div>
+  </div>
+<br/>
+{% endfor %}
+{% endblock %}
